@@ -815,8 +815,7 @@ TEST_F(ClassLoaderContextTest, CreateClassLoaderWithSharedLibraries) {
                             class_loader_1_dex_files);
 
   // Verify the shared libraries.
-  ArtField* field =
-      jni::DecodeArtField(WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders);
+  ArtField* field = WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders;
   ObjPtr<mirror::Object> raw_shared_libraries = field->GetObject(class_loader_1.Get());
   ASSERT_TRUE(raw_shared_libraries != nullptr);
 
@@ -900,8 +899,7 @@ TEST_F(ClassLoaderContextTest, CreateClassLoaderWithSharedLibrariesInParentToo) 
                             class_loader_1_dex_files);
 
   // Verify its shared library.
-  ArtField* field =
-      jni::DecodeArtField(WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders);
+  ArtField* field = WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders;
   ObjPtr<mirror::Object> raw_shared_libraries = field->GetObject(class_loader_1.Get());
   ASSERT_TRUE(raw_shared_libraries != nullptr);
 
@@ -1000,8 +998,7 @@ TEST_F(ClassLoaderContextTest, CreateClassLoaderWithSharedLibrariesDependencies)
                             class_loader_1_dex_files);
 
   // Verify its shared library.
-  ArtField* field =
-      jni::DecodeArtField(WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders);
+  ArtField* field = WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders;
   ObjPtr<mirror::Object> raw_shared_libraries = field->GetObject(class_loader_1.Get());
   ASSERT_TRUE(raw_shared_libraries != nullptr);
 
@@ -1115,8 +1112,7 @@ TEST_F(ClassLoaderContextTest, CreateClassLoaderWithSameSharedLibraries) {
                             class_loader_1_dex_files);
 
   // Verify its shared library.
-  ArtField* field =
-      jni::DecodeArtField(WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders);
+  ArtField* field = WellKnownClasses::dalvik_system_BaseDexClassLoader_sharedLibraryLoaders;
   ObjPtr<mirror::Object> raw_shared_libraries = field->GetObject(class_loader_1.Get());
   ASSERT_TRUE(raw_shared_libraries != nullptr);
 
